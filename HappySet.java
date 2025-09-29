@@ -13,9 +13,11 @@ public class HappySet implements Printable {
   }
 
   // 小計を計算するメソッド
-  private int getTotalPrice() {
+  private int getSubTotalPrice() {
     return main.getPrice() + sub.getPrice() + drink.getPrice();
   }
+
+
 
   @Override
   public void printReceipt() {
@@ -24,8 +26,12 @@ public class HappySet implements Printable {
     System.out.println("サブメニュー：　" + sub.getName() + " (" + sub.getPrice() + "円)");
     System.out.println("ドリンクメニュー：　" + drink.getName() + " (" + drink.getPrice() + "円)");
     System.out.println("--------------------");
-    System.out.println("合計金額：　" + getTotalPrice() + "円");
+    System.out.println("小計：　" + getSubTotalPrice() + "円");
     System.out.println("--------------------");
+
+
+    
+
 
   }
 }
