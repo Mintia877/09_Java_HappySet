@@ -1,10 +1,8 @@
 package org.example;
 
-import java.math.BigDecimal;
-
 public class SubProduct extends Product{
 
-  public SubProduct(String name, BigDecimal price) {
+  public SubProduct(String name, int price) {
     super(name, price);
   }
 }

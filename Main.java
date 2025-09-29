@@ -32,6 +32,16 @@ public class Main {
     myOrder2.printReceipt();
     myOrder3.printReceipt();
 
+    // 総計を計算
+    int totalSum = 0;
+    totalSum += myOrder1.getGrandTotal();
+    totalSum += myOrder2.getGrandTotal();
+    totalSum += myOrder3.getGrandTotal();
+
+    // 総計を印刷
+    System.out.println("=====================");
+    System.out.println("合計金額：　" + totalSum + "円");
+    System.out.println("=====================");
 
   }
 }
