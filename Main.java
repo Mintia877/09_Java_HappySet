@@ -7,29 +7,48 @@ public class Main {
   public static void main(String[] args) {
     // 商品を準備
     // メイン
-    Item hamberger = new Product("ハンバーガー", 230);
-    Item cheeseburger = new Product("チーズバーガー", 250);
-    Item chickenNuggets = new Product("チキンナゲット",270 );
+    Item hamburger = new MainProduct("ハンバーガー", 230);
+    Item cheeseburger = new MainProduct("チーズバーガー", 250);
+    Item chickenNuggets = new MainProduct("チキンナゲット",270 );
 
     // サブ
-    Item potato = new Product("ポテト", 150);
-    Item salad = new Product("サラダ", 270);
+    Item potato = new SubProduct("ポテト", 150);
+    Item salad = new SubProduct("サラダ", 270);
 
     // ドリンク
-    Item orangeJuice = new Product("オレンジジュース", 120);
-    Item appleJuice = new Product("リンゴジュース", 150);
-    Item vanillaShake = new Product("バニラシェイク", 120);
+    Item orangeJuice = new DrinkProduct("オレンジジュース", 120);
+    Item appleJuice = new DrinkProduct("リンゴジュース", 150);
+    Item vanillaShake = new DrinkProduct("バニラシェイク", 120);
 
     // 注文を印刷
     HappySet myOrder1 = new HappySet(cheeseburger, potato, orangeJuice);
-    HappySet myOrder2 = new HappySet(chickenNuggets, potato, vanillaShake);
-    HappySet myOrder3 = new HappySet(hamberger, salad, appleJuice);
+    HappySet myOrder2 = new HappySet(hamburger, potato, vanillaShake);
+    HappySet myOrder3 = new HappySet(chickenNuggets, salad, appleJuice);
+
 
     // レシートを印刷
+    System.out.println("***** Happy Hamburger Shop *****");
+    System.out.println("---- お買い上げありがとうございます ---");
+
+    System.out.println("◎ハッピーセットのご注文番号1");
     myOrder1.printReceipt();
+
+    System.out.println("◎ハッピーセットのご注文番号2");
     myOrder2.printReceipt();
+
+    System.out.println("◎ハッピーセットのご注文番号3");
     myOrder3.printReceipt();
 
+    // 総計を計算
+    int totalSum = 0;
+    totalSum += myOrder1.getSubTotal();
+    totalSum += myOrder2.getSubTotal();
+    totalSum += myOrder3.getSubTotal();
+
+    // 総計を印刷
+    System.out.println("=====================");
+    System.out.println("合計金額：　" + totalSum + "円");
+    System.out.println("=====================");
 
   }
 }
