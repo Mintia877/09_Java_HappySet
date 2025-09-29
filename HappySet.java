@@ -25,12 +25,7 @@ public class HappySet implements Printable {
 
   }
 
-  // 合計金額を計算するメソッド
-  public int getGrandTotal() {
-    return main.getPrice() + sub.getPrice() + drink.getPrice();
-  }
-
-  // 合計金額を計算するメソッド
+  // 小計を計算するメソッド
   public int getSubTotal() {
 
     return main.getPrice() + sub.getPrice() + drink.getPrice();

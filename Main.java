@@ -23,7 +23,7 @@ public class Main {
     // 注文を印刷
     HappySet myOrder1 = new HappySet(cheeseburger, potato, orangeJuice);
     HappySet myOrder2 = new HappySet(hamburger, potato, vanillaShake);
-    HappySet myOrder3 = new HappySet(chickenNuggets, potato, appleJuice);
+    HappySet myOrder3 = new HappySet(chickenNuggets, salad, appleJuice);
 
 
     // レシートを印刷
@@ -41,9 +41,9 @@ public class Main {
 
     // 総計を計算
     int totalSum = 0;
-    totalSum += myOrder1.getGrandTotal();
-    totalSum += myOrder2.getGrandTotal();
-    totalSum += myOrder3.getGrandTotal();
+    totalSum += myOrder1.getSubTotal();
+    totalSum += myOrder2.getSubTotal();
+    totalSum += myOrder3.getSubTotal();
 
     // 総計を印刷
     System.out.println("=====================");
