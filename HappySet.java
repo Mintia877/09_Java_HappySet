@@ -23,7 +23,6 @@ public class HappySet implements Printable {
     System.out.println("メイン： " + main.getName() + " (" + main.getPrice() + "円)");
     System.out.println("サブメニュー：　" + sub.getName() + " (" + sub.getPrice() + "円)");
     System.out.println("ドリンクメニュー：　" + drink.getName() + " (" + drink.getPrice() + "円)");
-    System.out.println("サブメニュー：　" + sub.getName() + " (" + sub.getPrice() + "円)");
     System.out.println("--------------------");
     System.out.println("合計金額：　" + getTotalPrice() + "円");
     System.out.println("--------------------");
