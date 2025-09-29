@@ -12,7 +12,7 @@ public class HappySet implements Printable {
 
   }
 
-  // 合計金額を計算するメソッド
+  // 小計を計算するメソッド
   private int getTotalPrice() {
     return main.getPrice() + sub.getPrice() + drink.getPrice();
   }
