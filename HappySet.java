@@ -6,24 +6,38 @@ public class HappySet implements Printable {
   private Item drink;
 
   public HappySet(Item main, Item sub, Item drink) {
+    // nullチェック
+    if (main == null || sub == null || drink == null) {
+      throw new IllegalArgumentException("メインメニュー、サブメニュー、飲み物のいずれかが入力されていません。"
+          + "注文する商品を選んでください。");
+    }
+
+    // 負の値チェック
+    if (main.getPrice() < 0 || sub.getPrice() < 0 || drink.getPrice() < 0) {
+      throw new IllegalArgumentException("商品の価格がマイナスになっています。修正してください。");
+
+    }
+
+
     this.main = main;
     this.sub = sub;
     this.drink = drink;
 
   }
 
-  // 合計金額を外部から取得できるようにする
+  // 合計金額を計算するメソッド
   public int getGrandTotal() {
     return main.getPrice() + sub.getPrice() + drink.getPrice();
   }
 
   // 合計金額を計算するメソッド
-  private int getSubTotal() {
+  public int getSubTotal() {
 
     return main.getPrice() + sub.getPrice() + drink.getPrice();
   }
 
   @Override
+
   public void printReceipt() {
     //System.out.println("--------------------");
     System.out.println("メイン： " + main.getName() + " (" + main.getPrice() + "円)");

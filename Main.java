@@ -9,7 +9,7 @@ public class Main {
     // メイン
     Item hamburger = new MainProduct("ハンバーガー", 230);
     Item cheeseburger = new MainProduct("チーズバーガー", 250);
-    Item chikenNuggets = new MainProduct("チキンナゲット",270 );
+    Item chickenNuggets = new MainProduct("チキンナゲット",270 );
 
     // サブ
     Item potato = new SubProduct("ポテト", 150);
@@ -23,13 +23,20 @@ public class Main {
     // 注文を印刷
     HappySet myOrder1 = new HappySet(cheeseburger, potato, orangeJuice);
     HappySet myOrder2 = new HappySet(hamburger, potato, vanillaShake);
-    HappySet myOrder3 = new HappySet(chikenNuggets, potato, appleJuice);
+    HappySet myOrder3 = new HappySet(chickenNuggets, potato, appleJuice);
 
 
     // レシートを印刷
-    System.out.println("------ レシート -----");
+    System.out.println("***** Happy Hamburger Shop *****");
+    System.out.println("---- お買い上げありがとうございます ---");
+
+    System.out.println("◎ハッピーセットのご注文番号1");
     myOrder1.printReceipt();
+
+    System.out.println("◎ハッピーセットのご注文番号2");
     myOrder2.printReceipt();
+
+    System.out.println("◎ハッピーセットのご注文番号3");
     myOrder3.printReceipt();
 
     // 総計を計算
