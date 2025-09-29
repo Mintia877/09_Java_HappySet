@@ -7,27 +7,30 @@ public class Main {
   public static void main(String[] args) {
     // 商品を準備
     // メイン
-    Item humberger = new Product("ハンバーガー", 230);
-    Item cheeseburger = new Product("チーズバーガー", 250);
-    Item chikenNuggers = new Product("チキンナゲット",270 );
+    Item hamburger = new MainProduct("ハンバーガー", 230);
+    Item cheeseburger = new MainProduct("チーズバーガー", 250);
+    Item chikenNuggets = new MainProduct("チキンナゲット",270 );
 
     // サブ
-    Item potato = new Product("ポテト", 150);
-    Item salad = new Product("サラダ", 270);
+    Item potato = new SubProduct("ポテト", 150);
+    Item salad = new SubProduct("サラダ", 270);
 
     // ドリンク
-    Item orangeJuice = new Product("オレンジジュース", 120);
-    Item appleJuice = new Product("リンゴジュース", 150);
-    Item fantaGrapes = new Product("ファンタグレープ", 120);
-    Item milk = new Product("牛乳", 160);
-    Item vanillaShake = new Product("バニラシェイク", 120);
+    Item orangeJuice = new DrinkProduct("オレンジジュース", 120);
+    Item appleJuice = new DrinkProduct("リンゴジュース", 150);
+    Item vanillaShake = new DrinkProduct("バニラシェイク", 120);
 
     // 注文を印刷
-    HappySet myOrder = new HappySet(cheeseburger, potato, milk);
+    HappySet myOrder1 = new HappySet(cheeseburger, potato, orangeJuice);
+    HappySet myOrder2 = new HappySet(hamburger, potato, vanillaShake);
+    HappySet myOrder3 = new HappySet(chikenNuggets, potato, appleJuice);
 
 
     // レシートを印刷
-    myOrder.printReceipt();
+    System.out.println("------ レシート -----");
+    myOrder1.printReceipt();
+    myOrder2.printReceipt();
+    myOrder3.printReceipt();
 
 
   }

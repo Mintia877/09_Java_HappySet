@@ -1,10 +1,12 @@
 package org.example;
 
+import java.math.BigDecimal;
+
 public class Product implements Item {
   private String name;
-  private int price;
+  private BigDecimal price;
 
-  public Product(String name, int price) {
+  public Product(String name, BigDecimal price) {
     this.name = name;
     this.price = price;
   }
@@ -16,7 +18,7 @@ public class Product implements Item {
   }
 
   @Override
-  public int getPrice() {
+  public BigDecimal getPrice() {
     return this.price;
   }
 }

@@ -1,5 +1,7 @@
 package org.example;
 
+import java.math.BigDecimal;
+
 public class HappySet implements Printable {
   private Item main;
   private Item sub;
@@ -12,20 +14,25 @@ public class HappySet implements Printable {
 
   }
 
+  // 合計金額を外部から取得できるようにする
+  public BigDecimal getGrandTotal() {
+    return main.getPrice() + sub.getPrice() + drink.getPrice();
+  }
+
   // 合計金額を計算するメソッド
-  private int getTotalPrice() {
+  private BigDecimal getSubTotal() {
     return main.getPrice() + sub.getPrice() + drink.getPrice();
   }
 
   @Override
   public void printReceipt() {
-    System.out.println("-----　レシート　-----");
+    //System.out.println("--------------------");
     System.out.println("メイン： " + main.getName() + " (" + main.getPrice() + "円)");
     System.out.println("サブメニュー：　" + sub.getName() + " (" + sub.getPrice() + "円)");
     System.out.println("ドリンクメニュー：　" + drink.getName() + " (" + drink.getPrice() + "円)");
     System.out.println("サブメニュー：　" + sub.getName() + " (" + sub.getPrice() + "円)");
     System.out.println("--------------------");
-    System.out.println("合計金額：　" + getTotalPrice() + "円");
+    System.out.println("小計：　" + getSubTotal() + "円");
     System.out.println("--------------------");
 
   }
