@@ -31,6 +31,8 @@ public class HappySet implements Printable {
     return main.getPrice() + sub.getPrice() + drink.getPrice();
   }
 
+
+
   @Override
 
   public void printReceipt() {
@@ -41,6 +43,10 @@ public class HappySet implements Printable {
     System.out.println("--------------------");
     System.out.println("小計：　" + getSubTotal() + "円");
     System.out.println("--------------------");
+
+
+    
+
 
   }
 }
