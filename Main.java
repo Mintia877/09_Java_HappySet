@@ -25,25 +25,35 @@ public class Main {
     HappySet myOrder2 = new HappySet(hamburger, potato, vanillaShake);
     HappySet myOrder3 = new HappySet(chickenNuggets, salad, appleJuice);
 
+    // 割引を適用したハンバーガーを作成
+    Item discountedHamburger = new DiscountedMainProduct("**割引クーポン適用**　ハンバーガー", 230, 30);
+
+    // HappySetの注文に割引商品を組み込む
+    HappySet myOrder4 = new HappySet(discountedHamburger, potato, vanillaShake);
+
 
     // レシートを印刷
     System.out.println("***** Happy Hamburger Shop *****");
     System.out.println("---- お買い上げありがとうございます ---");
 
-    System.out.println("◎ハッピーセットのご注文番号1");
+    System.out.println("＜Set1＞");
     myOrder1.printReceipt();
 
-    System.out.println("◎ハッピーセットのご注文番号2");
+    System.out.println("＜Set2＞");
     myOrder2.printReceipt();
 
-    System.out.println("◎ハッピーセットのご注文番号3");
+    System.out.println("＜Set3＞");
     myOrder3.printReceipt();
+
+    System.out.println("＜Set4＞");
+    myOrder4.printReceipt();
 
     // 総計を計算
     int totalSum = 0;
     totalSum += myOrder1.getSubTotal();
     totalSum += myOrder2.getSubTotal();
     totalSum += myOrder3.getSubTotal();
+    totalSum += myOrder4.getSubTotal();
 
     // 総計を印刷
     System.out.println("=====================");
